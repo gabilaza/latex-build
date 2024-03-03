@@ -1,0 +1,11 @@
+services:
+  latex-build:
+    build: .
+    container_name: latex-build
+    develop:
+      watch:
+        - action: rebuild
+          path: ./latex.tex
+    volumes:
+      - ./build:/build
+
